@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-950 text-white">
       <NavigationBar />
-      <main className="flex-grow flex flex-col items-center justify-center p-4 md:p-8">
+      <main className="flex-grow flex flex-col items-center justify-center p-4 md:p-8 mt-24">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-gradient">
           European Accessibility Act
         </h1>
