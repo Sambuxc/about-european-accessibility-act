@@ -201,7 +201,7 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ deadline }) => {
         
         {/* Counter display */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full">
-          <Card className="bg-gray-900/70 backdrop-blur border-gray-800 shadow-lg px-2 py-4 mx-auto max-w-fit">
+          <Card className="bg-gray-900/70 backdrop-blur border-gray-800 shadow-lg px-4 py-6 mx-auto max-w-[90%] md:max-w-[85%]">
             <div className="font-mono text-4xl md:text-5xl lg:text-6xl text-white flex space-x-2 justify-center">
               <div className="flex flex-col items-center">
                 <div className="text-blue-400">{formatNumber(timeLeft.days)}</div>
@@ -234,3 +234,4 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ deadline }) => {
     </div>
   );
 };
+
