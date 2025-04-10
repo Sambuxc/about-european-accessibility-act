@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from "react";
 import anime from "animejs";
 import { Card } from "@/components/ui/card";
@@ -22,7 +21,6 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ deadline }) => {
   const minutesRingRef = useRef<SVGCircleElement>(null);
   const secondsRingRef = useRef<SVGCircleElement>(null);
 
-  // Calculate time remaining
   useEffect(() => {
     const calculateTimeLeft = () => {
       const difference = +deadline - +new Date();
@@ -35,7 +33,6 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ deadline }) => {
         
         setTimeLeft({ days, hours, minutes, seconds });
         
-        // Update animations
         updateRings(days, hours, minutes, seconds);
       }
     };
@@ -46,23 +43,19 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ deadline }) => {
     return () => clearInterval(timer);
   }, [deadline]);
 
-  // Initialize and update animations
   const updateRings = (days: number, hours: number, minutes: number, seconds: number) => {
     if (!svgRef.current) return;
     
-    // Max values for normalization
     const MAX_DAYS = 365;
     const MAX_HOURS = 24;
     const MAX_MINUTES = 60;
     const MAX_SECONDS = 60;
     
-    // Calculate progress percentages
     const daysProgress = 360 * (1 - days / MAX_DAYS);
     const hoursProgress = 360 * (1 - hours / MAX_HOURS);
     const minutesProgress = 360 * (1 - minutes / MAX_MINUTES);
     const secondsProgress = 360 * (1 - seconds / MAX_SECONDS);
     
-    // Animate rings
     if (daysRingRef.current) {
       anime.set(daysRingRef.current, {
         strokeDashoffset: anime.setDashoffset,
@@ -95,7 +88,6 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ deadline }) => {
       });
     }
 
-    // Animate pulses on seconds change
     anime({
       targets: svgRef.current,
       scale: [1, 1.02, 1],
@@ -104,22 +96,19 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ deadline }) => {
     });
   };
 
-  // Format numbers to always have two digits
   const formatNumber = (num: number): string => {
     return num < 10 ? `0${num}` : num.toString();
   };
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-        {/* SVG for animated rings */}
+      <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[30rem] lg:h-96">
         <svg 
           ref={svgRef}
           className="w-full h-full" 
           viewBox="0 0 100 100"
           fill="none"
         >
-          {/* Segmented rings */}
           <circle 
             cx="50" 
             cy="50" 
@@ -157,7 +146,6 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ deadline }) => {
             fill="none" 
           />
           
-          {/* Animated rings */}
           <g transform="rotate(-90, 50, 50)">
             <circle 
               ref={daysRingRef}
@@ -199,9 +187,8 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ deadline }) => {
           </g>
         </svg>
         
-        {/* Counter display */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full">
-          <Card className="bg-gray-900/70 backdrop-blur border-gray-800 shadow-lg px-4 py-6 mx-auto max-w-[90%] md:max-w-[85%]">
+          <Card className="bg-gray-900/70 backdrop-blur border-gray-800 shadow-lg px-2 py-4 mx-auto max-w-fit">
             <div className="font-mono text-4xl md:text-5xl lg:text-6xl text-white flex space-x-2 justify-center">
               <div className="flex flex-col items-center">
                 <div className="text-blue-400">{formatNumber(timeLeft.days)}</div>
@@ -234,4 +221,3 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ deadline }) => {
     </div>
   );
 };
-
