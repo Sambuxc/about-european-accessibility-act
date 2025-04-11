@@ -65,6 +65,7 @@ export const AnimatedRings: React.FC<AnimatedRingsProps> = ({ days, hours, minut
       });
     }
 
+    // Remove the scaling animation that was causing the pulsing effect
     anime({
       targets: svgRef.current,
       scale: [1, 1.02, 1],
