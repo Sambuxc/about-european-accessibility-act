@@ -107,23 +107,56 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500;
   }
   
-  /* Define scoped animations */
-  @keyframes pulse-ring {
+  /* Define rotation animations */
+  @keyframes spin-slow {
     0% {
-      transform: scale(0.95);
-      opacity: 0.7;
-    }
-    50% {
-      transform: scale(1.05);
-      opacity: 0.9;
+      transform: rotate(0deg);
     }
     100% {
-      transform: scale(0.95);
-      opacity: 0.7;
+      transform: rotate(360deg);
     }
   }
   
-  .animate-pulse {
-    animation: pulse-ring 4s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  @keyframes spin-slow-reverse {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  
+  @keyframes spin-medium {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spin-medium-reverse {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 30s linear infinite;
+  }
+  
+  .animate-spin-slow-reverse {
+    animation: spin-slow-reverse 35s linear infinite;
+  }
+  
+  .animate-spin-medium {
+    animation: spin-medium 25s linear infinite;
+  }
+  
+  .animate-spin-medium-reverse {
+    animation: spin-medium-reverse 20s linear infinite;
   }
 }

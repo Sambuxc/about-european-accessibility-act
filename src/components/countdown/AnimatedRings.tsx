@@ -126,7 +126,7 @@ export const AnimatedRings: React.FC<AnimatedRingsProps> = ({ days, hours, minut
           strokeWidth="2"
           strokeDasharray="4 1"
           fill="none" 
-          className="animate-pulse"
+          className="animate-spin-slow"
         />
         <circle 
           ref={hoursRingRef}
@@ -136,6 +136,7 @@ export const AnimatedRings: React.FC<AnimatedRingsProps> = ({ days, hours, minut
           strokeWidth="2"
           strokeDasharray="4 1"
           fill="none" 
+          className="animate-spin-slow-reverse"
         />
         <circle 
           ref={minutesRingRef}
@@ -145,6 +146,7 @@ export const AnimatedRings: React.FC<AnimatedRingsProps> = ({ days, hours, minut
           strokeWidth="2"
           strokeDasharray="4 1"
           fill="none" 
+          className="animate-spin-medium"
         />
         <circle 
           ref={secondsRingRef}
@@ -154,6 +156,7 @@ export const AnimatedRings: React.FC<AnimatedRingsProps> = ({ days, hours, minut
           strokeWidth="2"
           strokeDasharray="4 1"
           fill="none" 
+          className="animate-spin-medium-reverse"
         />
       </g>
     </svg>
