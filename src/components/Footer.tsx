@@ -10,7 +10,7 @@ export const Footer = () => {
           © {new Date().getFullYear()} European Accessibility Act Countdown
         </div>
         <div className="flex items-center text-gray-300 text-sm">
-          <span>Crafted by Sambuxc + AI</span>
+          <span>Crafted by <a className="border-b transition-border duration-300 ease-linear hover:border-black" href="https://github.com/Sambuxc/" title="Sam Brutons github profile">Sambuxc</a> + AI</span>
           <a 
             href="https://github.com/Sambuxc" 
             target="_blank" 
