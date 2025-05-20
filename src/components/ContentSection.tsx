@@ -27,18 +27,18 @@ export const ContentSection = () => {
           <ul className="space-y-2">
             <li className="flex items-start">
               <FileText className="mr-2 mt-0.5 text-green-400" size={18} />
-              <span className="text-gray-200">Official EAA Directive Documentation</span>
+              <span className="text-gray-200 line-through">Official EAA Directive Documentation</span>
             </li>
             <li className="flex items-start">
               <FileText className="mr-2 mt-0.5 text-green-400" size={18} />
-              <span className="text-gray-200">Accessibility Requirements Checklist</span>
+              <span className="text-gray-200 line-through">Accessibility Requirements Checklist</span>
             </li>
             <li className="flex items-start">
               <FileText className="mr-2 mt-0.5 text-green-400" size={18} />
-              <span className="text-gray-200">Implementation Guidelines for Businesses</span>
+              <span className="text-gray-200 line-through">Implementation Guidelines for Businesses</span>
             </li>
             <li className="flex items-start">
-              <a href="The Accessibility Art of Accessibility" className="flex text-gray-200" title="9 Chapters of playful programming to learn the best accessibility practices for projects and applications developed in React, Angular and Vue.">
+              <a href="The Accessibility Art of Accessibility" className="flex text-gray-200 hover:text-green-400 hover:duration-500" title="9 Chapters of playful programming to learn the best accessibility practices for projects and applications developed in React, Angular and Vue.">
                 <Link className="mr-2 mt-0.5 text-green-400" size={18} />
                 <span>The Accessibility Art of Accessibility</span>
               </a>
@@ -67,15 +67,15 @@ export const ContentSection = () => {
         <section id="links">
           <h3 className="text-xl font-semibold mb-4 text-purple-400">External Links</h3>
           <div className="flex flex-wrap gap-2">
-            <Button variant="outline" className="border-gray-700 hover:border-purple-500 hover:bg-gray-800">
+            <Button variant="outline" className="border-gray-700 hover:border-purple-500 hover:bg-purple-800 hover:text-white">
               <ExternalLink className="mr-2 h-4 w-4" />
               Official EU Site
             </Button>
-            <Button variant="outline" className="border-gray-700 hover:border-purple-500 hover:bg-gray-800">
+            <Button variant="outline" className="border-gray-700 hover:border-purple-500 hover:bg-purple-800 hover:text-white">
               <ExternalLink className="mr-2 h-4 w-4" />
               Compliance Guide
             </Button>
-            <Button variant="outline" className="border-gray-700 hover:border-purple-500 hover:bg-gray-800">
+            <Button variant="outline" className="border-gray-700 hover:border-purple-500 hover:bg-purple-800 hover:text-white">
               <ExternalLink className="mr-2 h-4 w-4" />
               Accessibility Tools
             </Button>
