@@ -1,8 +1,7 @@
 
-import React from "react";
 import { CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, ExternalLink } from "lucide-react";
+import { FileText, ExternalLink, Link } from "lucide-react";
 
 export const ContentSection = () => {
   return (
@@ -37,6 +36,12 @@ export const ContentSection = () => {
             <li className="flex items-start">
               <FileText className="mr-2 mt-0.5 text-green-400" size={18} />
               <span className="text-gray-200">Implementation Guidelines for Businesses</span>
+            </li>
+            <li className="flex items-start">
+              <a href="The Accessibility Art of Accessibility" className="flex text-gray-200" title="9 Chapters of playful programming to learn the best accessibility practices for projects and applications developed in React, Angular and Vue.">
+                <Link className="mr-2 mt-0.5 text-green-400" size={18} />
+                <span>The Accessibility Art of Accessibility</span>
+              </a>
             </li>
           </ul>
         </section>
