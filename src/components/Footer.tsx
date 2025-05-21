@@ -1,6 +1,6 @@
 
-import React from "react";
 import { Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -19,6 +19,7 @@ export const Footer = () => {
             aria-label="GitHub Profile"
           >
             <Github size={16} className="text-blue-400 hover:text-blue-300" />
+            <ExternalLink className="mr-2 mt-0.5 text-blue-300" size={12} />
           </a>
         </div>
       </div>
